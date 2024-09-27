@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+
+$primary-color: #013220;
+$secondary-color: #ffffff;
+$font-poppins: 'Poppins', sans-serif;
+$font-recoleta: 'Recoleta', serif;
+$star-color: #ffc107;
+$padding: 16px;
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  color: $secondary-color;
+
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.carousel {
+  text-align: center;
+  justify-content: center;
+  padding: $padding;
+  position: relative;
+
+  &__title {
+   
+    .carousel__titleheader {
+        
+        background-color: #004b23; 
+  color: #f0f0e9; 
+  padding: 0.5rem 1.5rem; 
+  border: 2px solid #ffc107; 
+  border-radius: 30px; 
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: bold; 
+  text-transform: uppercase; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+        padding: 0.5rem 1rem;
+        margin-bottom: 20px;
+
+      }
+  
+
+      .carousel__secondTitle {
+        margin-top: 20px;
+        display: block;
+        font-family: $font-recoleta;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: $padding;
+        color: $secondary-color;
+      }
+  }
+
+  &__track-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    // Add the fade effect on both sides of the container
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  &__track {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 0px;
+  }
+
+  &__slide {
+    flex: 0 0 20%; // Ensure four slides appear per row
+    padding: $padding;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: $primary-color;
+    border-radius: 10px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    max-width: 270px; // Control the max-width of each card
+  }
+
+  &__content {
+    text-align: left;
+    padding: 20px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Space between image and text
+  }
+
+  &__image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__leftHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__nameAndStar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__name {
+  font-family: "Playwrite DE Grund", cursive;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  &__details {
+    font-size: 0.9rem;
+    color: gray;
+  }
+
+  &__description {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    max-width: 240px; // Adjust description max-width for wrapping
+    text-align: left;
+  }
+
+  &__stars {
+    color: $star-color;
+    font-size: 1.25rem;
+  }
+
+  &__buttons {
+    margin-top: $padding;
+    display: flex;
+    justify-content: center; // Center the buttons horizontally
+    position: relative;
+    bottom: 0; // Stick the buttons at the bottom
+    gap: 20px; // Space between the buttons
+    padding-top: 20px; // Add padding above the buttons
+
+    .carousel__button {
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid white;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      &--left, &--right {
+        position: static; // Static position for buttons
+      }
+    }
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: $padding;
+
+    .carousel__indicator {
+      width: 10px;
+      height: 10px;
+      background-color: lightgray;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  }
+
+  // Responsive for smaller screens
+  @media (max-width: 768px) {
+    &__slide {
+      flex: 0 0 45%; // Show two slides for tablet
+    }
+
+    &__buttons {
+      gap: 10px; // Reduce button gap for smaller screens
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__slide {
+      flex: 0 0 100%; // Show one slide for mobile
+    }
+
+    &__buttons {
+      gap: 8px; // Further reduce the gap between buttons
+    }
+
+    &__title {
+      font-size: 1rem;
+
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
