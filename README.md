@@ -27,7 +27,7 @@ This will install all the necessary dependencies for the project.
 After installing the dependencies, compile the SCSS file to CSS. Run the following command:
 
 ```bash
-npx sass style.scss style.css
+sass style.scss style.css
 ```
 
 This will convert the `style.scss` file into `style.css`.
